@@ -10,16 +10,11 @@
   
   <default remote="aosp" revision="refs/tags/android-7.1.2_r6" sync-j="4"/>
   
-  <project name="RKDocs" remote="rock64" revision="b8b02d5ae8cfccb2fed98966b5f4d7f4d0ae1fd8" upstream="thzy_develop"/>
-  <project name="RKTools" remote="rock64" revision="5db59c49d3707be5c6aaff2b728b8f25ab162587" upstream="thzy_develop"/>
-  <project clone-depth="1" name="all" path="vendor/opengapps/sources/all" remote="opengapps" revision="157966e8b12be1bd3f3d4a2260f37ee35ca709d1" upstream="master"/>
-  <project name="android-kernel" path="kernel" remote="ayufan" revision="10269ac910d49a79191342e7478860729d09291a" upstream="master"/>
-  <project name="android-u-boot" path="u-boot" remote="ayufan" revision="d753608ed2f896d54311e1c39ff7dfdbd751516c" upstream="master"/>
-  <project groups="pdk" name="android_external_ffmpeg" path="external/ffmpeg" remote="lineageos" revision="1bd02b0021d8125b0b028cd95b51231c1373e493" upstream="cm-14.1"/>
-  <project groups="pdk" name="android_external_stagefright-plugins" path="external/stagefright-plugins" remote="lineageos" revision="931ae6b373e024d6ae5c4935a09cf4a2741104a2" upstream="cm-14.1"/>
-  <project name="aosp_build" path="vendor/opengapps/build" remote="opengapps" revision="e6a176e7f4b0144f21449bab73b439f06902f757" upstream="master"/>
-  <project clone-depth="1" name="arm" path="vendor/opengapps/sources/arm" remote="opengapps" revision="a38f20de531576faccfa3a8939210dc9a176df4c" upstream="master"/>
-  <project clone-depth="1" name="arm64" path="vendor/opengapps/sources/arm64" remote="opengapps" revision="df07653ac054c9720ef8854b410bab212158f738" upstream="master"/>
+  
+  <!-- remote="ayufan" start-->
+  <project name="platform-build" path="build" remote="ayufan" revision="0737b4a541c52acec4cb81b3c59a60fc031d1990" upstream="nougat-7.1">
+    <copyfile dest="Makefile" src="core/root.mk"/>
+  </project>
   <project name="device-rockchip-common" path="device/rockchip/common" remote="ayufan" revision="7ea1ab406607293288f045bf0f1eca4c38b98cf5" upstream="nougat">
     <copyfile dest=".classpath" src=".classpath"/>
     <copyfile dest="mkimage.sh" src="mkimage.sh"/>
@@ -28,6 +23,101 @@
   <project name="device-rockchip-rk3328" path="device/rockchip/rk3328" remote="ayufan" revision="5c1f6f073f9bca905b87d0288900162fd19a1f03" upstream="nougat">
     <copyfile dest="build.sh" src="build.sh"/>
   </project>
+  <project name="platform-frameworks-av" path="frameworks/av" remote="ayufan" revision="631ea60c7e22c57683e238e7b7637f849364645e" upstream="nougat-7.1"/>
+  <project name="platform-frameworks-base" path="frameworks/base" remote="ayufan" revision="980093d7dbdfd0420516950302e25126ab4713ed" upstream="nougat-7.1"/>
+  <project name="hardware-rockchip-hwcomposer" path="hardware/rockchip/hwcomposer" remote="ayufan" revision="29ae0d00508ab580d512de2d4c7aff39a17343ad" upstream="nougat-7.1"/>
+  <project name="android-kernel" path="kernel" remote="ayufan" revision="10269ac910d49a79191342e7478860729d09291a" upstream="master"/>
+  <project name="packages-apps-Provision" path="packages/apps/Provision" remote="ayufan" revision="3a9d5f68218b9399bf340758a099c74e7bb7637c" upstream="nougat-7.1"/>
+  <project groups="pdk" name="rkbin" remote="ayufan" revision="d8b90685b3d93c358936babdd854f1018bc6d35e" upstream="master"/>
+  <project name="android-u-boot" path="u-boot" remote="ayufan" revision="d753608ed2f896d54311e1c39ff7dfdbd751516c" upstream="master"/>
+  <project name="vendor-rockchip-common" path="vendor/rockchip/common" remote="ayufan" revision="fd6cfe5ec8742e307b1ad779ebc22ccdc54cf292" upstream="master"/>
+  <project groups="pdk" name="vendor-ayufan-rockchip" path="vendor/ayufan/rockchip" remote="ayufan" revision="7a84928bcb52f5589f213cabfbde23b4a587dc61" upstream="master"/>
+  <!-- remote="ayufan" end-->
+
+  
+  <!-- remote="ayufan-pine64" start-->
+  <project name="opengapps_atv_build" path="vendor/opengapps/atv-build" remote="ayufan-pine64" revision="7fda48d1316cbd3957164dba37c7a678c81628d1" upstream="nougat"/>
+  <project groups="pdk" name="vendor-ayufan-apps" path="vendor/ayufan/apps" remote="ayufan-pine64" revision="b66239076df8714941c242d6d85472096f348987" upstream="master"/>
+  <project clone-depth="1" name="vendor-supersu" path="vendor/supersu" remote="ayufan-pine64" revision="dead1e03450e90bf71f8a874979018a5d44f2153" upstream="nougat"/>
+  <!-- remote="ayufan-pine64" end-->
+
+  
+  <!-- remote="cm" start-->
+  <!-- remote="cm" end-->
+
+  
+  <!-- remote="lineageos" start-->
+  <project groups="pdk" name="android_external_ffmpeg" path="external/ffmpeg" remote="lineageos" revision="1bd02b0021d8125b0b028cd95b51231c1373e493" upstream="cm-14.1"/>
+  <project groups="pdk" name="android_external_stagefright-plugins" path="external/stagefright-plugins" remote="lineageos" revision="931ae6b373e024d6ae5c4935a09cf4a2741104a2" upstream="cm-14.1"/>
+  <!-- remote="lineageos" end-->
+
+
+  <!-- remote="opengapps" start-->
+  <project clone-depth="1" name="all" path="vendor/opengapps/sources/all" remote="opengapps" revision="157966e8b12be1bd3f3d4a2260f37ee35ca709d1" upstream="master"/>
+  <project name="aosp_build" path="vendor/opengapps/build" remote="opengapps" revision="e6a176e7f4b0144f21449bab73b439f06902f757" upstream="master"/>
+  <project clone-depth="1" name="arm" path="vendor/opengapps/sources/arm" remote="opengapps" revision="a38f20de531576faccfa3a8939210dc9a176df4c" upstream="master"/>
+  <project clone-depth="1" name="arm64" path="vendor/opengapps/sources/arm64" remote="opengapps" revision="df07653ac054c9720ef8854b410bab212158f738" upstream="master"/>
+  <!-- remote="opengapps" end-->
+
+  
+  <!-- remote="rock64" start-->
+  <project name="platform-bionic" path="bionic" remote="rock64" revision="8b2e5b977118ebb8447cdf429c4a6be534c4fd1b" upstream="thzy_develop"/>
+  <project name="platform-bootable-recovery" path="bootable/recovery" remote="rock64" revision="a08ec2cf33274dd07ee08cc1c112392ece7aa877" upstream="thzy_develop"/>
+  <project name="external-abc" path="external/abc" remote="rock64" revision="eff421e7c5b09d62fb74a7356eac19d58844e609" upstream="thzy_develop"/>
+  <project name="external-io" path="external/io" remote="rock64" revision="ce23c82ae301239f8500e91a0008faa06db15147" upstream="thzy_develop"/>
+  <project name="external-libiconv" path="external/libiconv" remote="rock64" revision="a6194413bedd9a908e3dfe2cadec15d490faf9fb" upstream="thzy_develop"/>
+  <project name="platform-external-libjpeg-turbo" path="external/libjpeg-turbo" remote="rock64" revision="c20effb2bb43af4d95b50ff898859ff448f29863" upstream="thzy_develop"/>
+  <project name="external-ntfs-3g" path="external/ntfs-3g" remote="rock64" revision="c243be4233af17e69dc09a7479f2f8c5725898cb" upstream="thzy_develop"/>
+  <project name="platform-external-ppp" path="external/ppp" remote="rock64" revision="62bf48951853dfd02fc26d672d1bd03611255940" upstream="thzy_develop"/>
+  <project name="platform-external-skia" path="external/skia" remote="rock64" revision="77d0dab06cea4674300cb28aa11cc3ef691b7376" upstream="thzy_develop"/>
+  <project name="platform-external-tinyalsa" path="external/tinyalsa" remote="rock64" revision="472b5e3fc1660660e0e9a3fa4cd5f752643920f2" upstream="thzy_develop"/>
+  <project name="external-wlan_loader" path="external/wlan_loader" remote="rock64" revision="bbebed5248b615fddd1ca62a9f507ac2eb30088e" upstream="thzy_develop"/>
+  <project name="platform-external-wpa_supplicant_8" path="external/wpa_supplicant_8" remote="rock64" revision="024aba50d54834ec2544dab604080770df5548af" upstream="thzy_develop"/>
+  <project name="platform-frameworks-ex" path="frameworks/ex" remote="rock64" revision="59c255ce30b2077c2452253b4067700640bb6bd9" upstream="thzy_develop"/>
+  <project name="platform-frameworks-native" path="frameworks/native" remote="rock64" revision="9145fbe182441831c69c8a00e63f0e1a1cd03a87" upstream="thzy_develop"/>
+  <project name="platform-frameworks-opt-net-ethernet" path="frameworks/opt/net/ethernet" remote="rock64" revision="24b35ad2478c9c33cbac80957c684628a0987deb" upstream="thzy_develop"/>
+  <project groups="pdk-fs" name="frameworks-opt-net-pppoe" path="frameworks/opt/net/pppoe" remote="rock64" revision="ed0209c090aee3244e0902380a2e6c33693ba5bc" upstream="thzy_develop"/>
+  <project name="platform-frameworks-opt-net-wifi" path="frameworks/opt/net/wifi" remote="rock64" revision="1973321ed9bdf2f4bdfd0767e5a467ae0b7ff16a" upstream="thzy_develop"/>
+  <project name="hardware-realtek" path="hardware/realtek" remote="rock64" revision="37b72b44708581e9814eb71979abbbf7ea7f3b5b" upstream="thzy_develop"/>
+  <project name="hardware-rockchip-audio" path="hardware/rockchip/audio" remote="rock64" revision="ef714b3a8f6e0d365091c8b8bbc05d25956883d4" upstream="thzy_develop"/>
+  <project name="hardware-rockchip-camera" path="hardware/rockchip/camera" remote="rock64" revision="d2c6816c321e71bd9c4385fca6ba26a70ed32b25" upstream="thzy_develop"/>
+  <project name="hardware-rockchip-hdmicec" path="hardware/rockchip/hdmicec" remote="rock64" revision="ca7b5c87d321b682688db1c217a60bbdb9e14223" upstream="thzy_develop"/>
+  <project name="hardware-rockchip-jpeghw" path="hardware/rockchip/jpeghw" remote="rock64" revision="d9a9a6e0971aa63a1ab66e1360bb74dd33b99275" upstream="thzy_develop"/>
+  <project name="hardware-rockchip-libgralloc" path="hardware/rockchip/libgralloc" remote="rock64" revision="92e6c2cde6a504c659fe869e28c34c59c1846c1e" upstream="thzy_develop"/>
+  <project name="hardware-rockchip-libiep" path="hardware/rockchip/libiep" remote="rock64" revision="5799ce5f41e044b9bed903c64401d50e6e6e50f0" upstream="thzy_develop"/>
+  <project name="hardware-rockchip-liblights" path="hardware/rockchip/liblights" remote="rock64" revision="1de699990813d7b65c163f78061f9c393a8c4363" upstream="thzy_develop"/>
+  <project name="hardware-rockchip-librga" path="hardware/rockchip/librga" remote="rock64" revision="4ab6c69933a6a1f509bd6891898766cbae9ff433" upstream="thzy_develop"/>
+  <project name="hardware-rockchip-librkvpu" path="hardware/rockchip/librkvpu" remote="rock64" revision="34d8dde96fc2b2eb36d6b272676d49e3eaa20f2c" upstream="thzy_develop"/>
+  <project name="hardware-rockchip-omx_il" path="hardware/rockchip/omx_il" remote="rock64" revision="96544ff25a44df4e168e11f8aabfb04c668130dd" upstream="thzy_develop"/>
+  <project name="platform-hardware-broadcom-libbt" path="hardware/broadcom/libbt" remote="rock64" revision="e63cfa4e6403f909b3cac3e5698e7feb8dda34af" upstream="thzy_develop"/>
+  <project name="platform-hardware-broadcom-wlan" path="hardware/broadcom/wlan" remote="rock64" revision="bd36b66640e8d71074ea5ea9c3d772d2689a2545" upstream="thzy_develop"/>
+  <project name="platform-hardware-libhardware" path="hardware/libhardware" remote="rock64" revision="c962affebfc026c5ddbb0f7291f4568f2cc23e3a" upstream="thzy_develop"/>
+  <project name="platform-hardware-libhardware_legacy" path="hardware/libhardware_legacy" remote="rock64" revision="c04c4261b203c2015b379602a7fdc1137d80e48c" upstream="thzy_develop"/>
+  <project name="platform-packages-apps-Bluetooth" path="packages/apps/Bluetooth" remote="rock64" revision="cf0701c1d2137057488115d13e57b2059a7d9981" upstream="thzy_develop"/>
+  <project name="platform-packages-apps-Browser" path="packages/apps/Browser" remote="rock64" revision="3c6fc342ef1e61f70a58b22fd423a135cfe92ae1" upstream="thzy_develop"/>
+  <project name="platform-packages-apps-Camera2" path="packages/apps/Camera2" remote="rock64" revision="73a9984b1af2001805b929c593cf75e45688faa5" upstream="thzy_develop"/>
+  <project name="platform-packages-apps-DeskClock" path="packages/apps/DeskClock" remote="rock64" revision="5d16a0f91b7deb589bd80bb76ab18268e4363361" upstream="thzy_develop"/>
+  <project name="platform-packages-apps-ExactCalculator" path="packages/apps/ExactCalculator" remote="rock64" revision="c2034ee276bf9bdc3ed44aa4df91a294cf018501" upstream="thzy_develop"/>
+  <project name="platform-packages-apps-Gallery2" path="packages/apps/Gallery2" remote="rock64" revision="3b453d2f09cdfa7095cb92374158e65213cc5fa9" upstream="thzy_develop"/>
+  <project name="platform-packages-inputmethods-LatinIME" path="packages/inputmethods/LatinIME" remote="rock64" revision="e0b52e61a23ac64fb3b86aa45de663b2ed2f190b" upstream="thzy_develop"/>
+  <project name="platform-packages-apps-Music" path="packages/apps/Music" remote="rock64" revision="ba8515c7f465bf3d8f98817b834dc03b8e4a40b1" upstream="thzy_develop"/>
+  <project name="platform-packages-providers-MediaProvider" path="packages/providers/MediaProvider" remote="rock64" revision="d1666cffe4623d38dc37d6f0cb8fe55995f46371" upstream="thzy_develop"/>
+  <project name="platform-packages-apps-Settings" path="packages/apps/Settings" remote="rock64" revision="07354b3b9c807cab317e78f33305a1b894bf4245" upstream="thzy_develop"/>
+  <project name="platform-packages-apps-TvSettings" path="packages/apps/TvSettings" remote="rock64" revision="ca544f40bbb0290ad636c660e2091d7263073643" upstream="thzy_develop"/>
+  <project name="RKDocs" remote="rock64" revision="b8b02d5ae8cfccb2fed98966b5f4d7f4d0ae1fd8" upstream="thzy_develop"/>
+  <project name="RKTools" remote="rock64" revision="5db59c49d3707be5c6aaff2b728b8f25ab162587" upstream="thzy_develop"/>
+  <project name="rkst" remote="rock64" revision="c264f23734649fdb83d983bea7bcf11612651926" upstream="thzy_develop"/>
+  <project name="platform-system-bt" path="system/bt" remote="rock64" revision="08e913c757b341f235bb162c8d9b6b0edbbec37f" upstream="thzy_develop"/>
+  <project name="platform-system-core" path="system/core" remote="rock64" revision="34eac11480d7b658a92840091d05ec5ed45b27c7" upstream="thzy_develop"/>
+  <project name="platform-system-netd" path="system/netd" remote="rock64" revision="1d179c056623c5960f4c824128465901c9e4b01f" upstream="thzy_develop"/>
+  <project name="platform-system-sepolicy" path="system/sepolicy" remote="rock64" revision="547e8edd6d0f5f43203a2ba0f0ed2bfb3013a240" upstream="thzy_develop"/>
+  <project name="platform-system-vold" path="system/vold" remote="rock64" revision="27c9f0dc4464b21c01caa90473d9bfcf6969939e" upstream="thzy_develop"/>
+  <project groups="pdk" name="system-displayd" path="system/displayd" remote="rock64" revision="a2eadb28a763adc387ea41e771a61bc806493cc7" upstream="thzy_develop"/>
+  <project name="vendor-Widevine" path="vendor/widevine" remote="rock64" revision="78a9b7333f9724e8dfa53466b9f3f47e74440b0a" upstream="thzy_develop"/>
+  <!-- remote="rock64" end-->
+  
+  
+  <!-- upstream="refs/tags/android-7.1.2_r6" start-->
   <project groups="device,fugu,broadcom_pdk,pdk" name="device/asus/fugu" revision="5db03cd21db0868bc9209975af08422b80076175" upstream="refs/tags/android-7.1.2_r6"/>
   <project clone-depth="1" groups="device,fugu,broadcom_pdk,pdk" name="device/asus/fugu-kernel" revision="ac723159b3b31d442dcadea3530b5837ce4d3207" upstream="refs/tags/android-7.1.2_r6"/>
   <project groups="pdk-cw-fs,pdk" name="device/common" revision="d49a18a17d624b41bcf79ad972ebfdb93f4c2045" upstream="refs/tags/android-7.1.2_r6"/>
@@ -67,62 +157,6 @@
   <project groups="device,shamu,broadcom_pdk,generic_fs,pdk" name="device/moto/shamu" revision="b71d7807ca08ce15c951c5bc707bb6c9f4757d83" upstream="refs/tags/android-7.1.2_r6"/>
   <project clone-depth="1" groups="device,shamu,broadcom_pdk,generic_fs,pdk" name="device/moto/shamu-kernel" revision="dcd277105c4db0006c268246a410ca4885d50441" upstream="refs/tags/android-7.1.2_r6"/>
   <project groups="pdk" name="device/sample" revision="11e84765fa179b5337c9a2fce685d5ba2388fe2c" upstream="refs/tags/android-7.1.2_r6"/>
-  <project name="external-abc" path="external/abc" remote="rock64" revision="eff421e7c5b09d62fb74a7356eac19d58844e609" upstream="thzy_develop"/>
-  <project name="external-io" path="external/io" remote="rock64" revision="ce23c82ae301239f8500e91a0008faa06db15147" upstream="thzy_develop"/>
-  <project name="external-libiconv" path="external/libiconv" remote="rock64" revision="a6194413bedd9a908e3dfe2cadec15d490faf9fb" upstream="thzy_develop"/>
-  <project name="external-ntfs-3g" path="external/ntfs-3g" remote="rock64" revision="c243be4233af17e69dc09a7479f2f8c5725898cb" upstream="thzy_develop"/>
-  <project name="external-wlan_loader" path="external/wlan_loader" remote="rock64" revision="bbebed5248b615fddd1ca62a9f507ac2eb30088e" upstream="thzy_develop"/>
-  <project groups="pdk-fs" name="frameworks-opt-net-pppoe" path="frameworks/opt/net/pppoe" remote="rock64" revision="ed0209c090aee3244e0902380a2e6c33693ba5bc" upstream="thzy_develop"/>
-  <project name="hardware-realtek" path="hardware/realtek" remote="rock64" revision="37b72b44708581e9814eb71979abbbf7ea7f3b5b" upstream="thzy_develop"/>
-  <project name="hardware-rockchip-audio" path="hardware/rockchip/audio" remote="rock64" revision="ef714b3a8f6e0d365091c8b8bbc05d25956883d4" upstream="thzy_develop"/>
-  <project name="hardware-rockchip-camera" path="hardware/rockchip/camera" remote="rock64" revision="d2c6816c321e71bd9c4385fca6ba26a70ed32b25" upstream="thzy_develop"/>
-  <project name="hardware-rockchip-hdmicec" path="hardware/rockchip/hdmicec" remote="rock64" revision="ca7b5c87d321b682688db1c217a60bbdb9e14223" upstream="thzy_develop"/>
-  <project name="hardware-rockchip-hwcomposer" path="hardware/rockchip/hwcomposer" remote="ayufan" revision="29ae0d00508ab580d512de2d4c7aff39a17343ad" upstream="nougat-7.1"/>
-  <project name="hardware-rockchip-jpeghw" path="hardware/rockchip/jpeghw" remote="rock64" revision="d9a9a6e0971aa63a1ab66e1360bb74dd33b99275" upstream="thzy_develop"/>
-  <project name="hardware-rockchip-libgralloc" path="hardware/rockchip/libgralloc" remote="rock64" revision="92e6c2cde6a504c659fe869e28c34c59c1846c1e" upstream="thzy_develop"/>
-  <project name="hardware-rockchip-libiep" path="hardware/rockchip/libiep" remote="rock64" revision="5799ce5f41e044b9bed903c64401d50e6e6e50f0" upstream="thzy_develop"/>
-  <project name="hardware-rockchip-liblights" path="hardware/rockchip/liblights" remote="rock64" revision="1de699990813d7b65c163f78061f9c393a8c4363" upstream="thzy_develop"/>
-  <project name="hardware-rockchip-librga" path="hardware/rockchip/librga" remote="rock64" revision="4ab6c69933a6a1f509bd6891898766cbae9ff433" upstream="thzy_develop"/>
-  <project name="hardware-rockchip-librkvpu" path="hardware/rockchip/librkvpu" remote="rock64" revision="34d8dde96fc2b2eb36d6b272676d49e3eaa20f2c" upstream="thzy_develop"/>
-  <project name="hardware-rockchip-omx_il" path="hardware/rockchip/omx_il" remote="rock64" revision="96544ff25a44df4e168e11f8aabfb04c668130dd" upstream="thzy_develop"/>
-  <project name="opengapps_atv_build" path="vendor/opengapps/atv-build" remote="ayufan-pine64" revision="7fda48d1316cbd3957164dba37c7a678c81628d1" upstream="nougat"/>
-  <project name="packages-apps-Provision" path="packages/apps/Provision" remote="ayufan" revision="3a9d5f68218b9399bf340758a099c74e7bb7637c" upstream="nougat-7.1"/>
-  <project name="platform-bionic" path="bionic" remote="rock64" revision="8b2e5b977118ebb8447cdf429c4a6be534c4fd1b" upstream="thzy_develop"/>
-  <project name="platform-bootable-recovery" path="bootable/recovery" remote="rock64" revision="a08ec2cf33274dd07ee08cc1c112392ece7aa877" upstream="thzy_develop"/>
-  <project name="platform-build" path="build" remote="ayufan" revision="0737b4a541c52acec4cb81b3c59a60fc031d1990" upstream="nougat-7.1">
-    <copyfile dest="Makefile" src="core/root.mk"/>
-  </project>
-  <project name="platform-external-libjpeg-turbo" path="external/libjpeg-turbo" remote="rock64" revision="c20effb2bb43af4d95b50ff898859ff448f29863" upstream="thzy_develop"/>
-  <project name="platform-external-ppp" path="external/ppp" remote="rock64" revision="62bf48951853dfd02fc26d672d1bd03611255940" upstream="thzy_develop"/>
-  <project name="platform-external-skia" path="external/skia" remote="rock64" revision="77d0dab06cea4674300cb28aa11cc3ef691b7376" upstream="thzy_develop"/>
-  <project name="platform-external-tinyalsa" path="external/tinyalsa" remote="rock64" revision="472b5e3fc1660660e0e9a3fa4cd5f752643920f2" upstream="thzy_develop"/>
-  <project name="platform-external-wpa_supplicant_8" path="external/wpa_supplicant_8" remote="rock64" revision="024aba50d54834ec2544dab604080770df5548af" upstream="thzy_develop"/>
-  <project name="platform-frameworks-av" path="frameworks/av" remote="ayufan" revision="631ea60c7e22c57683e238e7b7637f849364645e" upstream="nougat-7.1"/>
-  <project name="platform-frameworks-base" path="frameworks/base" remote="ayufan" revision="980093d7dbdfd0420516950302e25126ab4713ed" upstream="nougat-7.1"/>
-  <project name="platform-frameworks-ex" path="frameworks/ex" remote="rock64" revision="59c255ce30b2077c2452253b4067700640bb6bd9" upstream="thzy_develop"/>
-  <project name="platform-frameworks-native" path="frameworks/native" remote="rock64" revision="9145fbe182441831c69c8a00e63f0e1a1cd03a87" upstream="thzy_develop"/>
-  <project name="platform-frameworks-opt-net-ethernet" path="frameworks/opt/net/ethernet" remote="rock64" revision="24b35ad2478c9c33cbac80957c684628a0987deb" upstream="thzy_develop"/>
-  <project name="platform-frameworks-opt-net-wifi" path="frameworks/opt/net/wifi" remote="rock64" revision="1973321ed9bdf2f4bdfd0767e5a467ae0b7ff16a" upstream="thzy_develop"/>
-  <project name="platform-hardware-broadcom-libbt" path="hardware/broadcom/libbt" remote="rock64" revision="e63cfa4e6403f909b3cac3e5698e7feb8dda34af" upstream="thzy_develop"/>
-  <project name="platform-hardware-broadcom-wlan" path="hardware/broadcom/wlan" remote="rock64" revision="bd36b66640e8d71074ea5ea9c3d772d2689a2545" upstream="thzy_develop"/>
-  <project name="platform-hardware-libhardware" path="hardware/libhardware" remote="rock64" revision="c962affebfc026c5ddbb0f7291f4568f2cc23e3a" upstream="thzy_develop"/>
-  <project name="platform-hardware-libhardware_legacy" path="hardware/libhardware_legacy" remote="rock64" revision="c04c4261b203c2015b379602a7fdc1137d80e48c" upstream="thzy_develop"/>
-  <project name="platform-packages-apps-Bluetooth" path="packages/apps/Bluetooth" remote="rock64" revision="cf0701c1d2137057488115d13e57b2059a7d9981" upstream="thzy_develop"/>
-  <project name="platform-packages-apps-Browser" path="packages/apps/Browser" remote="rock64" revision="3c6fc342ef1e61f70a58b22fd423a135cfe92ae1" upstream="thzy_develop"/>
-  <project name="platform-packages-apps-Camera2" path="packages/apps/Camera2" remote="rock64" revision="73a9984b1af2001805b929c593cf75e45688faa5" upstream="thzy_develop"/>
-  <project name="platform-packages-apps-DeskClock" path="packages/apps/DeskClock" remote="rock64" revision="5d16a0f91b7deb589bd80bb76ab18268e4363361" upstream="thzy_develop"/>
-  <project name="platform-packages-apps-ExactCalculator" path="packages/apps/ExactCalculator" remote="rock64" revision="c2034ee276bf9bdc3ed44aa4df91a294cf018501" upstream="thzy_develop"/>
-  <project name="platform-packages-apps-Gallery2" path="packages/apps/Gallery2" remote="rock64" revision="3b453d2f09cdfa7095cb92374158e65213cc5fa9" upstream="thzy_develop"/>
-  <project name="platform-packages-apps-Music" path="packages/apps/Music" remote="rock64" revision="ba8515c7f465bf3d8f98817b834dc03b8e4a40b1" upstream="thzy_develop"/>
-  <project name="platform-packages-apps-Settings" path="packages/apps/Settings" remote="rock64" revision="07354b3b9c807cab317e78f33305a1b894bf4245" upstream="thzy_develop"/>
-  <project name="platform-packages-apps-TvSettings" path="packages/apps/TvSettings" remote="rock64" revision="ca544f40bbb0290ad636c660e2091d7263073643" upstream="thzy_develop"/>
-  <project name="platform-packages-inputmethods-LatinIME" path="packages/inputmethods/LatinIME" remote="rock64" revision="e0b52e61a23ac64fb3b86aa45de663b2ed2f190b" upstream="thzy_develop"/>
-  <project name="platform-packages-providers-MediaProvider" path="packages/providers/MediaProvider" remote="rock64" revision="d1666cffe4623d38dc37d6f0cb8fe55995f46371" upstream="thzy_develop"/>
-  <project name="platform-system-bt" path="system/bt" remote="rock64" revision="08e913c757b341f235bb162c8d9b6b0edbbec37f" upstream="thzy_develop"/>
-  <project name="platform-system-core" path="system/core" remote="rock64" revision="34eac11480d7b658a92840091d05ec5ed45b27c7" upstream="thzy_develop"/>
-  <project name="platform-system-netd" path="system/netd" remote="rock64" revision="1d179c056623c5960f4c824128465901c9e4b01f" upstream="thzy_develop"/>
-  <project name="platform-system-sepolicy" path="system/sepolicy" remote="rock64" revision="547e8edd6d0f5f43203a2ba0f0ed2bfb3013a240" upstream="thzy_develop"/>
-  <project name="platform-system-vold" path="system/vold" remote="rock64" revision="27c9f0dc4464b21c01caa90473d9bfcf6969939e" upstream="thzy_develop"/>
   <project groups="pdk" name="platform/abi/cpp" path="abi/cpp" revision="36b381298a4efb7c293d394d8b1acbda68230989" upstream="refs/tags/android-7.1.2_r6"/>
   <project groups="pdk" name="platform/art" path="art" revision="f9e3754e8a2f6244e037362c03db32d4244ecb2d" upstream="refs/tags/android-7.1.2_r6"/>
   <project groups="pdk,tradefed" name="platform/build/blueprint" path="build/blueprint" revision="3a89d1ce9fe7a5160ee87ee11f99edbf540020fc" upstream="refs/tags/android-7.1.2_r6"/>
@@ -581,13 +615,6 @@
   <project groups="tools" name="platform/tools/external/fat32lib" path="tools/external/fat32lib" revision="3880776e41ff7def06e351720f2d162f88b58a03" upstream="refs/tags/android-7.1.2_r6"/>
   <project groups="tools" name="platform/tools/external/gradle" path="tools/external/gradle" revision="d35398cac47a404255bbd5568b7cc1d8514e1b75" upstream="refs/tags/android-7.1.2_r6"/>
   <project groups="pdk" name="platform/tools/test/connectivity" path="tools/test/connectivity" revision="a635aec7df8de4c9ffecfef7f3e44b31171b5641" upstream="refs/tags/android-7.1.2_r6"/>
-  <project groups="pdk" name="rkbin" remote="ayufan" revision="d8b90685b3d93c358936babdd854f1018bc6d35e" upstream="master"/>
-  <project name="rkst" remote="rock64" revision="c264f23734649fdb83d983bea7bcf11612651926" upstream="thzy_develop"/>
-  <project groups="pdk" name="system-displayd" path="system/displayd" remote="rock64" revision="a2eadb28a763adc387ea41e771a61bc806493cc7" upstream="thzy_develop"/>
   <project name="toolchain/binutils" revision="c327c9c1bcffd231fcaa05f3fd8c047d1fe0afcc" upstream="refs/tags/android-7.1.2_r6"/>
-  <project name="vendor-Widevine" path="vendor/widevine" remote="rock64" revision="78a9b7333f9724e8dfa53466b9f3f47e74440b0a" upstream="thzy_develop"/>
-  <project groups="pdk" name="vendor-ayufan-apps" path="vendor/ayufan/apps" remote="ayufan-pine64" revision="b66239076df8714941c242d6d85472096f348987" upstream="master"/>
-  <project groups="pdk" name="vendor-ayufan-rockchip" path="vendor/ayufan/rockchip" remote="ayufan" revision="7a84928bcb52f5589f213cabfbde23b4a587dc61" upstream="master"/>
-  <project name="vendor-rockchip-common" path="vendor/rockchip/common" remote="ayufan" revision="fd6cfe5ec8742e307b1ad779ebc22ccdc54cf292" upstream="master"/>
-  <project clone-depth="1" name="vendor-supersu" path="vendor/supersu" remote="ayufan-pine64" revision="dead1e03450e90bf71f8a874979018a5d44f2153" upstream="nougat"/>
+  <!-- upstream="refs/tags/android-7.1.2_r6" end-->
 </manifest>
